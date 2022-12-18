@@ -1,0 +1,37 @@
+
+In the start we say require and intialize something may be database connection file path 
+is given means we have invoken the connection like below , 
+
+
+flow is like belowe 
+
+        look into "Script" of package.json file.
+            "scripts": {
+                "start": "nodemon app.js",
+                "test": "echo \"Error: no test specified\" && exit 1"
+            },
+
+        * here we are starting with app.js and nodemon 
+        * After that in app.js we are  {
+                const routes = require('./server/routes/movieRoutes.js') ;
+                app.use('/',routes) ;
+            }
+            using routes and when we hit localhost:5000/ , here we are lokking for "/" .
+            as we have mentioned that use routes for "/" above , it will call movieRoutes.js
+
+        * Now we are in movieRoutes.js , here in the beggining we are {
+                require('../models/db') ;
+                const Movie = require('../models/movie') ;
+            } 
+            mentioned this. Now first we will call db.js which is presemt at '../models/db' .
+            and will complete all the settings and configurations present there for eg. Database connection
+
+            Now on second line as mentioned we will call movie.js which is present in '../models/movie' .
+            and now it will complete all the tasks mentioned in the movie.js
+
+        * Now we will start executing all the functionalities mentioned below in the 
+            { router.get('/api/movies/',movieController.listMovies) ; }
+            Now we will send back the response based on which page is called .
+            if it is home page '/' then respective page will be called 
+            if it is something else ,like '/register' , then respective mentioned function 
+            will be called present in the movieController.js

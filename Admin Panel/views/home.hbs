@@ -1,0 +1,78 @@
+
+{{!-- <script>
+
+  var UnAuthProd = document.getElementById("mov").value ;
+  var Artist = document.getElementById("art").value ; 
+  console.log(Artist);
+  var len = Artist.length ;
+
+  for(let i=0;i<len;i++)
+  {
+      console.log(Artist[i]);
+  }
+
+</script> --}}
+
+	
+{{#if alert }}
+    <div class="alert alert-danger " role="alert">
+        {{alert}}
+        {{!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> --}}
+    </div>
+{{/if}}
+	
+{{#if alert }}
+    <div class="alert alert-success " role="alert">
+        {{alert}}
+        {{!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> --}}
+    </div>
+{{/if}}
+
+
+<div class="row">
+    <div class="col-6"><h1>Users</h1></div>
+    <div class="col-6 d-flex justify-content-end">
+      <a href="http://localhost:5000/" type="button" class="btn btn-primary align-self-center mb-2">+ View Main</a>
+    </div>
+</div>
+
+<input type = "hidden" id = "mov" value = {{movies}} />
+<input type = "hidden" id = "art" value = {{artist}} />
+
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr> 
+      {{!-- <th scope="col" value ="id" >#</th> --}}
+      <th scope="col" value="first_name" >Name</th>
+      <th scope="col" value="artistId" > Artist ID  </th>
+      <th scope="col">Category</th>
+      <th scope="col">Image </th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Price</th>
+      <th scope="col" class="text-end">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each movies}}
+    <tr>
+      {{!-- <th scope="row" > {{this._id}}</th> --}}
+      <td>{{this.ArtistName}} </td>
+      <td>
+        <a href="/profile/{{this._id}}"> {{this.ArtistId}} </a>
+      </td>
+      <td>{{this.Quantity}}</td>
+      <td>
+        <input type="button" value="View Image" onclick="window.open('{{this.Image_URL}}','popUpWindow','height=400,width=600,left=10,top=10,,scrollbars=yes,menubar=no'); return false;" />
+      </td>
+      <td>{{this.Quantity}}</td>
+      <td>{{this.Price}}</td>
+      <td class="text-end">
+        {{!-- <a href="/profile/{{this._id}}" type ="button" class="btn btn-sm btn-light"> <i class="bi bi-eye"> View </i> </a> --}}
+        <a href="/adduser/{{this._id}}" type ="button" class="btn btn-sm btn-light"> <i class="bi bi-pencil"> Add </i> </a>
+        <a href="/delete/{{this._id}}" type ="button" class="btn btn-sm btn-light"> <i class="bi bi-person-x"> Delete </i> </a>
+        
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

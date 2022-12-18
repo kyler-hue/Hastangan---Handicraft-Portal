@@ -1,0 +1,32 @@
+
+<head><title>ERROR!!</title></head>
+
+<script src="../../public/assets/js/hbs_equality.js"></script>
+<div class="x" style="background-image: url('./assets/images/index_assets/error_bg1.jpg');background-size: cover;margin: 0;height: 90%;">
+        <div class="container" style="text-align: center; height: 80%; padding: 10%;">
+            <div class="display-1" style="color: black;">
+            Error {{error_code}}
+            </div>
+            <br><br>
+            <p style="font-size: 1.4rem;">
+                <b>Credentials Entered Already Exists Or Artists Id Does Not Exists , Please Check Carefully !</b>
+            </p>
+
+            <div class="btn btn-outline-dark"><a href="/">Back to Home</a></div>
+        </div>
+
+    {{!-- {{#ifEquals error_code 700}}
+        <div class="container" style="text-align: center; height: 80%; padding: 10%;">
+            <div class="display-1" style="color: black;">
+            Error {{error_code}}
+            </div>
+            <br><br>
+            <p style="font-size: 1.4rem;">
+                <b>Artists Id Does Not Exists , Please Check !</b>
+            </p>
+
+            <div class="btn btn-outline-dark"><a href="/">Back to Home</a></div>
+        </div>
+    {{/ifEquals}} --}}
+</div>
+

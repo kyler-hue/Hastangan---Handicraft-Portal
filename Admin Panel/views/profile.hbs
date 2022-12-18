@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+{{#if alert}}
+    <div class="alert alert-danger " role="alert">
+        {{alert}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{{/if}}
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>User Profile</title>
+</head>
+
+<body>
+	<section class="index-section mb-5" style="color: #d29851 !important; background-color: #3f3143 !important;">
+		<div class="page-content">
+			<div class="mb-1 text-center">
+				<h1 class="font-weight-bold">YOUR PROFILE</h1>
+			</div>
+		</div>
+	</section>
+	
+	{{#each movies }}
+		<section>
+			<div class="container">
+				<div class="row mb-5">
+					<div class="col-lg-8 col-xl-9">
+						<div class="container">
+							<center>
+								<div class="" style="align-items: center;">
+									<form>
+										<div class="row mb-3">
+											<label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
+											<div class="col-sm-10">
+											{{!-- <label for="inputEmail3" class="col-sm-2 col-form-label">{{this.ArtistName}}</label> --}}
+											<input type="email" class="form-control" id="inputEmail3" placeholder={{this.ArtistName}}>
+											</div>
+										</div>
+										<div class="row mb-3">
+											<label for="inputPassword3" class="col-sm-2 col-form-label">ArtistId</label>
+											<div class="col-sm-10">
+											<input type="password" class="form-control" id="inputPassword3" placeholder={{this.ArtistId}}>
+											</div>
+										</div>
+										<div class="row mb-3">
+											<label for="inputPassword3" class="col-sm-2 col-form-label">Product Name</label>
+											<div class="col-sm-10">
+											<input type="password" class="form-control" id="inputPassword3" placeholder={{this.ProductName}}>
+											</div>
+										</div>
+										
+										<div class="row mb-3">
+											<label for="inputPassword3" class="col-sm-2 col-form-label">Category</label>
+											<div class="col-sm-10">
+											<input type="password" class="form-control" id="inputPassword3" placeholder={{this.Category}}>
+											</div>
+										</div>
+										<div class="row mb-3">
+											<label for="inputPassword3" class="col-sm-2 col-form-label">Price</label>
+											<div class="col-sm-10">
+											<input type="password" class="form-control" id="inputPassword3" placeholder={{this.Price}}>
+											</div>
+										</div>
+										<div class="row mb-3">
+											<label for="inputPassword3" class="col-sm-2 col-form-label">Quantity</label>
+											<div class="col-sm-10">
+											<input type="password" class="form-control" id="inputPassword3" placeholder={{this.Quantity}}>
+											</div>
+										</div>
+										<div class="row mb-3">
+											<label for="inputPassword3" class="col-sm-2 col-form-label">Image</label>
+											<div class="col-sm-10">
+												<img src="/home/vishwa/Documents/React/Hastkala-main/public/assets/images/products/{{this.Imgae}}" alt="Italian Trulli">
+												
+											</div>
+										</div>										
+									</p>
+								</div>
+								
+							</center>
+						</div>
+				</div>
+		</section>
+	{{/each}}
+	<script src="https://code.jquery.com/jquery-3.5.1.js"
+		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous">
+
+	</script>
+
+</body>
+</html>
