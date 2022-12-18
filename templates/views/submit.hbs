@@ -1,0 +1,92 @@
+{{> header}}
+
+<div class="px-4 py-5 my-5 text-center">
+  <h1 class="display-5 fw-bold">Submit Your Arts</h1>
+  <div class="col-lg-6 mx-auto">
+    <p class="lead">Share your amazing Arts with billions of people accross the world. Fill our form to get started.</p>
+  </div>
+</div>
+
+<div class="row justify-content-center">
+
+  {{#if alert}}
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+          {{alert}}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+  {{/if}}
+
+    {{!-- <div class="col-8 alert alert-danger" role="alert">
+
+    </div> --}}
+
+
+  <div class="col-8">
+
+    <form action="/submit" enctype="multipart/form-data" method="POST">
+    
+      <div class="row g-3">
+
+        <div class="col-12" style="margin-bottom: 20px;">
+          <label for="product_name" class="form-label">Product Name</label>
+          <input type="text" name="product_name" id="product_name" class="form-control" required>
+        </div>
+
+        <div class="col-12" style="margin-bottom: 20px;">
+          <label for="artist_name" class="form-label">Artist Name</label>
+          <input type="text" name="artist_name" id="artist_name" class="form-control" required>
+        </div>
+
+        <div class="col-12" style="margin-bottom: 20px;">
+          <label for="artist_ID" class="form-label">Artist ID</label>
+          <input type="number" name="artist_ID" id="artist_ID" class="form-control" required>
+        </div>
+
+        <div class="col-12" style="margin-bottom: 20px;">
+          <label for="artist_AadharID" class="form-label">Artist Aadhar ID</label>
+          <input type="number" name="artist_AadharID" id="artist_AadharID" class="form-control" >
+        </div>
+
+        <div class="col-12" style="margin-bottom: 20px;">
+          <label for="price" class="form-label">Price</label>
+          <input type="number" name="price" id="price" class="form-control" required>
+        </div>
+
+        <div class="col-12" style="margin-bottom: 20px;">
+          <label for="quantity" class="form-label">Quantity</label>
+          <input type="number" name="quantity" id="quantity" class="form-control">
+        </div>
+
+        <div class="col-12" style="margin-bottom: 20px;">
+          <label for="category">Select Category</label>
+          <select class="form-select form-control" name="category" aria-label="Category">
+            <option selected>Select Category</option>
+            <option value="Thai">Hand Painted</option>
+            <option value="American">Wooden Craft</option>
+            <option value="Chinese">Spice Boxes</option>
+            <option value="Mexican">Jars and Containers</option>
+            <option value="Indian">Sarees</option>
+          </select>
+        </div>
+
+        <div class="col-12" style="margin-bottom: 20px;">
+          <label for="image_url">Product Image Link </label>
+          <input type="url" class="form-control" name="image_url" accept="image/*" placeholder=" eg. www.sds/asdsa/ds/html.jpeg" >
+        </div>
+
+        <div class="col-12" style="margin-bottom: 20px;">
+          <label for="image" >Product Image</label>
+          <input type="file" class="form-control" name="image" accept="image/*">
+        </div>
+        
+        <div class="col-12" style="margin-bottom: 20px;">
+          <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Submit</button>
+        </div>
+      </div>
+    
+    </form>
+
+  </div>
+</div>
+
+{{>footer}}

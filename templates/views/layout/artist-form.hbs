@@ -1,0 +1,102 @@
+{{> header}}
+
+<div class="px-4 py-5 my-5 text-center">
+  <h1 class="display-5 fw-bold">Hello Artists !!</h1>
+  <div class="col-lg-6 mx-auto">
+    <p class="lead">Create your amazing profile and let billions of people know accross the world. Fill our form to get started.</p>
+  </div>
+</div>
+
+<div class="row justify-content-center">
+
+  {{#if alert}}
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+          {{alert}}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+  {{/if}}
+
+    {{!-- <div class="col-8 alert alert-danger" role="alert">
+
+    </div> --}}
+
+
+  <div class="col-8">
+
+    <form action="/addArtist" enctype="multipart/form-data" method="POST">
+    
+      <div class="row g-3">
+
+        <div class="col-12" style="margin-bottom: 20px;">
+          <label for="first_name" class="form-label">First Name</label>
+          <input type="text" name="first_name" id="first_name" class="form-control" value={{this.first_name}} required>
+        </div>
+
+        <div class="col-12" style="margin-bottom: 20px;">
+          <label for="last_name" class="form-label">Last Name</label>
+          <input type="text" name="last_name" id="last_name" class="form-control" value={{this.last_name}} required>
+        </div>
+
+        <div class="col-12" style="margin-bottom: 20px;">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" name="email" id="email" class="form-control" value={{this.email}} required>
+        </div>
+
+        <div class="col-12" style="margin-bottom: 20px;">
+          <label for="artist_ID" class="form-label">Artist ID</label>
+          <input type="number" name="artist_ID" id="artist_ID" class="form-control" value={{this.ArtistId}} required>
+        </div>
+
+        <div class="col-12" style="margin-bottom: 20px;">
+          <label for="artist_AadharID" class="form-label">Artist Aadhar ID</label>
+          <input type="number" name="artist_AadharID" id="artist_AadharID" class="form-control" value={{this.ArtistId}} >
+        </div>
+
+        <div class="col-12" style="margin-bottom: 20px;">
+          <label for="mobile" class="form-label">Phone / Mobile Number</label>
+          <input type="number" name="mobile" id="mobile" class="form-control" value={{this.phone}} required>
+        </div>
+
+        <div class="col-12" style="margin-bottom: 20px;">
+          <label for="Address" class="form-label">Address</label>
+          <input type="text" name="Address" id="Address" class="form-control" value={{this.Address}>
+        </div>
+
+        <div class="col-12" style="margin-bottom: 20px;">
+          <label for="State" class="form-label">State</label>
+          <input type="text" name="State" id="State" class="form-control" value={{this.State}}>
+        </div>
+        <div class="col-12" style="margin-bottom: 20px;">
+          <label for="District" class="form-label">District</label>
+          <input type="text" name="District" id="District" class="form-control" value={{this.District}}>
+        </div>
+        <div class="col-12" style="margin-bottom: 20px;">
+          <label for="Taluka" class="form-label">Taluka</label>
+          <input type="text" name="Taluka" id="Taluka" class="form-control" value={{this.Taluka}}>
+        </div>
+        <div class="col-12" style="margin-bottom: 20px;">
+          <label for="Village" class="form-label">Village</label>
+          <input type="text" name="Village" id="Village" class="form-control" value={{this.Village}}>
+        </div>
+        <div class="col-12" style="margin-bottom: 20px;">
+          <label for="pincode" class="form-label">Pincode</label>
+          <input type="number" name="pincode" id="pincode" class="form-control" value={{this.pincode}}>
+        </div>
+        
+        <div class="col-12" style="margin-bottom: 20px;">
+          <label for="image" >Your Photo</label>
+          <input type="file" class="form-control" name="image" accept="image/*" value={{this.image}}>
+        </div>
+        
+        <div class="col-12" style="margin-bottom: 20px;">
+          <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Submit</button>
+        </div>
+      </div>
+    
+    </form>
+
+  </div>
+</div>
+
+{{>footer}}
+

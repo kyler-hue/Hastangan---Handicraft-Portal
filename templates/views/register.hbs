@@ -1,0 +1,59 @@
+{{> header}}
+<head><title>Register</title></head>
+<section class="index-section mb-5" style="color: #d29851 !important; background-color: #3f3143 !important;">
+    <div class="page-content">
+        <div class="mb-1 text-center">
+            <h1 class="font-weight-bold">CREATE ACCOUNT</h1>
+        </div>
+    </div>
+</section>
+
+<section>
+    {{#if user_exists}}
+    <h5 class="col-label my-3" style="text-align: center; color:red">User with this email already exists!</h5>
+    {{/if}}
+    <div class="container-fluid ">
+        <form action="/register" method="POST">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6 bg-light p-5">
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="form-group col-md-6">
+                        <label class="form-label col-label" for="fname">First Name</label>
+                        <input class="field__input" type="text" name="first_name" placeholder="" id="#fname">
+                    </div>
+                    <div class="col-md-3"></div>
+                    <div class="col-md-3"></div>
+                    <div class="form-group col-md-6">
+                        <label class="form-label col-label" for="lname">Last Name</label>
+                        <input class="field__input" type="text" name="last_name" placeholder="" id="#lname">
+                    </div>
+                    <div class="col-md-3"></div>
+                    <div class="col-md-3"></div>
+                    <div class="form-group col-md-6">
+                        <label class="form-label col-label my-3" for="email">Email Address</label>
+                        <input class="field__input" type="text" name="email" placeholder="joe.black@gmail.com" id="#email">
+                    </div>
+                    <div class="col-md-3"></div>
+                    <div class="col-md-3"></div>
+                    <div class="form-group col-md-6">
+                        <label class="form-label col-label" for="pass">Password </label>
+                        <input class="field__input" type="password" name="password" placeholder="" id="#password">
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+                <div class="form-group text-center">
+                    <input id="#create" type="submit" value="Create" class="btn btn-outline-dark" >
+                    <br><br>
+                    <a href="/login" class="col-label my-3">Have an Account? Login</a>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        </form>
+    </div>
+</section>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+{{> footer}}

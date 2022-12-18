@@ -1,0 +1,86 @@
+{{> header name=name email=email}}
+
+<head>
+	<title>ORDER: #{{orderID}}</title>
+	<script src="assets/js/getPriceFormat.js"></script>
+</head>
+
+<body onload="getPriceFormat()">
+	<section class="index-section mb-5" style="color: #d29851 !important; background-color: #3f3143 !important;">
+		<div class="page-content">
+			<div class="mb-1 text-center">
+				<h1 class="font-weight-bold">ORDER: #{{orderID}}</h1>
+				<p>Order #{{orderID}} is currently {{status}}.</p>
+			</div>
+		</div>
+
+	</section>
+	<section>
+		<div class="container">
+			<div class="row mb-5 ">
+				<div class="col-lg-8 col-xl-9 overflow-auto">
+					<table class="table">
+						<thead style="color: #d29851 !important; background-color: #3f3143 !important;">
+							<tr>
+								<th class="text-center ">ITEM</th>
+								<th></th>
+								<th>PRICE</th>
+								<th>QUANTITY</th>
+							</tr>
+						</thead>
+						<tbody>
+							{{#each cart}}
+							<tr>
+								<td scope="row">
+									<img src="./assets/images/products/EL-005-058_A_720x.jpg " style="width: 100px;height: 100px;">
+								<td> {{this.product.name}} </td>
+								</td>
+								<td class="price-content">{{this.product.price}}</td>
+								<td>{{this.qty}}</td>
+							</tr>
+							{{/each}}
+						</tbody>
+					</table>
+				</div>
+				{{> user_sidepanel}}
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 bg-light p-3">
+					<strong class="mb-3">ORDER SUMMARY</strong>
+					<p class="my-3">Shipping and additional costs are calculated based on values you have entered.</p>
+					<span>Order Subtotal</span><span class="float-right price-content">{{order_subtotal}}</span>
+					<hr>
+					<span>Order Shipping Cost</span><span class="float-right price-content">{{order_shipping}}</span>
+					<hr>
+					<span>Order Net Total</span><span class="float-right price-content">{{order_total}}</span>
+					<hr>
+
+
+				</div>
+				<div class="col-md-4 bg-light p-3 mx-3">
+					{{!-- <strong> INVOICE ADDRESS</strong>
+					<p> John Brown <br> 13/25 New Avenue <br> New Heaven<br> 45Y 73J
+						<Br> England
+						<br> Great Britain
+					</p> --}}
+
+					<strong> SHIPPING ADDRESS</strong>
+					<p> {{user.first_name}} {{user.last_name}}
+						<br> {{shipping.shipping_info.address}}
+						<br> {{shipping.shipping_info.city}}
+						<br> {{shipping.shipping_info.state}}
+						<br> India
+					</p>
+				</div>
+				<div class="col-md-4"></div>
+			</div>
+		</div>
+	</section>
+	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+		crossorigin="anonymous"></script>
+	{{> footer}}
+</body>

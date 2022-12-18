@@ -1,0 +1,69 @@
+{{> header name=name email=email}}
+
+<head>
+	<title>User Profile</title>
+</head>
+
+<body>
+	<section class="index-section mb-5" style="color: #d29851 !important; background-color: #3f3143 !important;">
+		<div class="page-content">
+			<div class="mb-1 text-center">
+				<h1 class="font-weight-bold">YOUR PROFILE</h1>
+			</div>
+		</div>
+	</section>
+	<section>
+		<p style="text-align: center; color: red; font-size: 1.2rem;"><b>{{err}}</b></p>
+	</section>
+    {{#if rows}}
+        <section>
+            <form style="margin-left:400px;margin-right:400px" action="/view-artist/{{rows._id}}" method="POST">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">First Name</label>
+                    <input type="text" name="first_name" class="form-control" id="exampleInputFirstName" aria-describedby="nameHelp" placeholder={{rows.first_name}}>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Last Name</label>
+                    <input type="text" name="last_name" class="form-control" id="exampleInputLastName" aria-describedby="lastnameHelp" placeholder={{rows.last_name}}>
+                </div>
+                
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder={{rows.email}}>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Phone Number</label>
+                    <input type="Number" name="phone" class="form-control" id="exampleInputPhoneNumber" aria-describedby="PhoneNumberHelp" placeholder={{rows.phone}}>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Address</label>
+                    <input type="text" name="address" class="form-control" id="exampleInputAddress" aria-describedby="AddressHelp" placeholder={{rows.Address}}>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">State</label>
+                    <input type="text" name="state" class="form-control" id="exampleInputState" aria-describedby="StateHelp" placeholder={{rows.State}}>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">District</label>
+                    <input type="text" name="district" class="form-control" id="exampleInputDistrict" aria-describedby="DistrictHelp" placeholder={{rows.District}}>
+                </div>
+                
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Taluka</label>
+                    <input type="text" name="taluka" class="form-control" id="exampleInputTaluka" aria-describedby="TalukaHelp" placeholder={{rows.Taluka}}>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Village</label>
+                    <input type="text" name="village" class="form-control" id="exampleInputVillage" aria-describedby="VillageHelp" placeholder={{rows.Village}}>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Change Details</button>
+                </form>
+	    </section>
+    {{/if}}
+	<script src="https://code.jquery.com/jquery-3.5.1.js"
+		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous">
+    </script>
+
+</body>

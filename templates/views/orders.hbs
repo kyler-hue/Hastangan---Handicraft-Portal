@@ -1,0 +1,51 @@
+{{> header name=name email=email}}
+
+<head>
+	<title>Orders</title>
+	<script src="assets/js/getPriceFormat.js"></script>
+</head>
+
+
+<body onload="getPriceFormat()">
+	<section class="index-section mb-5" style="color: #d29851 !important; background-color: #3f3143 !important;">
+		<div class="page-content">
+			<div class="mb-1 text-center">
+				<h1 class="font-weight-bold">YOUR ORDERS</h1>
+			</div>
+		</div>
+
+	</section>
+	<section>
+		<div class="container">
+			<div class="row mb-5 overflow-auto">
+				<div class="col-lg-8 col-xl-9">
+					<table class="table ">
+						<thead style="color: #d29851 !important; background-color: #3f3143 !important;">
+							<tr>
+								{{!-- <th>ORDER#</th> --}}
+								<th>TOTAL</th>
+								<th>PAYMENT TYPE</th>
+								<th>ORDER STATUS</th>
+
+							</tr>
+						</thead>
+						<tbody>
+							{{#each order_summary}}
+							<tr>
+								{{!-- <td scope="row"><a href="/completed?id={{this.id}}">#{{ this.id}}</a></td> --}}
+								<td class="price-content">{{ this.total }}</td>
+								<td>{{ this.payment }}</td>
+								<td>{{ this.status }}</td>
+							</tr>
+							{{/each}}
+						</tbody>
+					</table>
+				</div>
+				{{> user_sidepanel}}
+			</div>
+	</section>
+	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+		crossorigin="anonymous"></script>
+
+	{{> footer}}
+</body>
