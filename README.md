@@ -1,4 +1,4 @@
-# Hastkala---Handicraft-Portal
+# Hastangan---Handicraft-Portal
 
 Add your username and password for mongodb connection.
 
